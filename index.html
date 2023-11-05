@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <div class="game-container">
+        <div class="players">
+            <div class="player playerx currentplayer">&#x00d7;</div>
+            <div class="player playero">&#x25cb;</div>
+        </div>
+        <div class="board-container">
+            <div class="board">
+                <span id="entry" class="" onclick=""></span>
+                <span id="entry" class="" onclick=""></span>
+                <span id="entry" class="" onclick=""></span>
+                <span id="entry" class="" onclick=""></span>
+                <span id="entry" class="" onclick=""></span>
+                <span id="entry" class="" onclick=""></span>
+                <span id="entry" class="" onclick=""></span>
+                <span id="entry" class="" onclick=""></span>
+                <span id="entry" class="" onclick=""></span>
+            </div>
+            <div id="linecontainer">
+                <div id="line" class=""></div>
+            </div>
+            <div id="dlinecontainer">
+                <div id="dline" class=""></div>
+            </div>
+            <div id="announcer" class="">
+                <div id="finalist"></div>
+                <div id="result"></div>
+            </div>
+        </div>
+        <button class="reset">reset game.</button>
+    </div>
+</body>
+</html>

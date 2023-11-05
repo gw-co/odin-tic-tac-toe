@@ -1,0 +1,187 @@
+body{
+    font-family: sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+.game-container{
+    margin: auto;
+    padding: 10px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    .players{
+        display: flex;
+        gap: 80px;
+
+        .player{
+            font-size: 80px;
+            border: 2px solid gray;
+            border-radius: 5px;
+            user-select: none;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .playero{
+            padding-bottom: 8px;
+        }
+        .currentplayer{
+            box-shadow: 0px 5px 2px gray;
+        }
+        .winner{
+            background-color: lightgreen;
+        }
+    }
+    .board-container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .board{
+            width: 400px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.462);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 8px;
+
+            #entry{
+                background-color: white;
+                font-size: 180px;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            #entry.xentry{
+                color: rgb(79, 149, 149);
+            }
+            .oentry{
+                color: rgb(202, 62, 62);
+                padding-bottom: 14px;
+            }
+            .entry:hover{
+                background-color: rgb(246, 246, 246);
+            }
+        }
+        #linecontainer, #dlinecontainer{
+            position: absolute;
+            height: 8px;
+            width: 0;
+        }
+        .toprow{
+            top: calc(33.333%/2 - 8px * 0.666);
+            rotate: 0deg;
+        }
+        .midrow{
+            top: calc(50% - 2px);
+            rotate: 0deg;
+        }
+        .bottomrow{
+            top: calc(66.666% + 33.333%/2);
+            rotate: 0deg;
+        }
+        .rightcol{
+            top: calc(50% - 2px);
+            left: 34%;
+            rotate: 90deg;
+        }
+        .leftcol{
+            top: calc(50% - 2px);
+            left: -34%;
+            rotate: 90deg;
+        }
+        .midcol{
+            top: calc(50% - 2px);
+            left: 0;
+            rotate: 90deg;
+        }
+        .diagonal1{
+            top: calc(50% - 2px);
+            /* left: ; */
+            rotate: 45deg;
+        }
+        .diagonal2{
+            top: calc(50% - 2px);
+            rotate: -45deg;
+        }
+        #linecontainer.toprow, #linecontainer.midrow, #linecontainer.bottomrow,
+        #linecontainer.leftcol, #linecontainer.midcol, #linecontainer.rightcol,
+        #dlinecontainer.toprow, #dlinecontainer.midrow, #dlinecontainer.bottomrow,
+        #dlinecontainer.leftcol, #dlinecontainer.midcol, #dlinecontainer.rightcol{
+            width: 100%;
+        }
+        #linecontainer.diagonal1, #linecontainer.diagonal2,
+        #dlinecontainer.diagonal1, #dlinecontainer.diagonal2{
+            width: 141%;
+        }
+
+        #line, #dline{
+            float: left;
+            background-color: rgb(0, 0, 0);
+            height: 8px;
+            width: 0;
+        }
+        #line.growline, #dline.growline{
+            width: 100%;
+            transition: width 0.2s ease;
+        }
+        #announcer{
+            position: absolute;
+            width: 0;
+            height: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            top: 50%;
+            outline: 10px solid rgba(240, 240, 240, 0);
+            user-select: none;
+        }
+        #announcer.announce{
+            box-sizing: border-box;
+            padding: 20px;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(240, 240, 240);
+            outline: 10px solid rgb(240, 240, 240);
+            transition: all 1s 0.5s ease-in-out;
+        }
+        #finalist{
+            font-size: 144px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #finalist.xentry{
+            font-size: 400px;
+            color: rgb(79, 149, 149);
+        }
+        #finalist.oentry{
+            font-size: 400px;
+            color: rgb(202, 62, 62);
+        }
+        #result{
+            font-size: 100px;
+        }
+    }
+    .reset{
+        font-size: 24px;
+    }
+}
