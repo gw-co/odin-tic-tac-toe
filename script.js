@@ -135,6 +135,8 @@ const gameboard = (function(){
             dline.removeAttribute('class');
             dlinecontainer.removeAttribute('class');
             announcer.removeAttribute('class');
+            finalist.removeAttribute('class');
+            result.textContent = '';
         });
     }
 
