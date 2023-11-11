@@ -333,6 +333,12 @@ function aimove(board){
     if(depth == 0){
         for(let i = 0; i < 9; i++) {
             if(typeof(ws[i]) === 'number')
+            if(ws[i] > 0 && ls[i] == 0 && ds[i] == 0){
+                return i;
+            }
+        }
+        for(let i = 0; i < 9; i++) {
+            if(typeof(ws[i]) === 'number')
             if(ws[i] > 0 && ls[i] == 0){
                 return i;
             }
